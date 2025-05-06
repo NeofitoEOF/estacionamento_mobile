@@ -1,3 +1,4 @@
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useState } from "react";
 
 const API_URL = "http://10.0.2.2:8000"; 
@@ -14,9 +15,15 @@ export function useReserva() {
     let vehicle_year = ano;
     let parking_type_id = vagaId;
     try {
-      const response = await fetch(`${API_URL}/parkings/`, {
+      const token = await AsyncStorage.getItem('access_token');
+      const tokenType = await AsyncStorage.getItem('token_type');
+      if (!token) throw new Error("Token de acesso ausente");
+      const response = await fetch(`${API_URL}/parking/parkings/`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { 
+          "Content-Type": "application/json",
+          Authorization: `${tokenType} ${token}`,
+         },
         body: JSON.stringify({ vehicle_color, license_plate, vehicle_year, parking_type_id }),
       });
 

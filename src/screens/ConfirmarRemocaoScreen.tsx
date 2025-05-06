@@ -3,6 +3,7 @@ import { View, StyleSheet, Alert } from "react-native";
 import { Button, Text } from "react-native-paper";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { RootStackParamList } from "../navigation/navigation";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const API_URL = "http://10.0.2.2:8000";
 
@@ -14,8 +15,17 @@ const ConfirmarRemocaoScreen = ({ route, navigation }: Props) => {
   
   const removerVeiculo = async () => {
     try {
-      const response = await fetch(`${API_URL}/parkings/active/${license_plate}`, {
+
+      const token = await AsyncStorage.getItem('access_token');
+      const tokenType = await AsyncStorage.getItem('token_type');
+      if (!token) throw new Error("Token de acesso ausente");
+
+      const response = await fetch(`${API_URL}/parking/parkings/active/${license_plate}`, {
         method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `${tokenType} ${token}`,
+        }
       });
 
       if (!response.ok) throw new Error("Erro ao remover veículo");
