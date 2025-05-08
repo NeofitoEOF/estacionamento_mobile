@@ -35,7 +35,6 @@ const LoginScreen = () => {
 
   const navigation = useNavigation();
 
-  // Animation values
   const formOpacity = useSharedValue(0);
   const formTranslateY = useSharedValue(50);
   const logoScale = useSharedValue(0.8);
@@ -43,7 +42,6 @@ const LoginScreen = () => {
   const passwordScale = useSharedValue(1);
   const buttonScale = useSharedValue(1);
 
-  // Animated styles
   const formAnimatedStyle = useAnimatedStyle(() => ({
     opacity: formOpacity.value,
     transform: [{ translateY: formTranslateY.value }]
@@ -99,7 +97,6 @@ const LoginScreen = () => {
     }
   };
 
-  // Start animations on component mount
   React.useEffect(() => {
     logoScale.value = withSequence(
       withTiming(1.2, { duration: 500, easing: Easing.out(Easing.cubic) }),

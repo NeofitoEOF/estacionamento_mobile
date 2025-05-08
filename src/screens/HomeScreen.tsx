@@ -13,7 +13,6 @@ type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
 const HomeScreen = () => {
   const navigation = useNavigation();
 
-  // Animações de entrada
   const card1Opacity = useSharedValue(0);
   const card2Opacity = useSharedValue(0);
 

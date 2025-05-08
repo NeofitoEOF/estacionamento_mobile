@@ -1,0 +1,63 @@
+Estacionamento Mobile App
+Aplicativo mobile para gerenciamento de estacionamentos em diferentes pontos da cidade, como aeroporto, estacionamento central e shopping. Desenvolvido em React Native.
+
+Funcionalidades
+Login de usuário
+Seleção do estacionamento desejado (Aeroporto, Estacionamento Central, Shopping)
+Visualização de vagas disponíveis
+Pré-requisitos
+Antes de começar, certifique-se de ter instalado em sua máquina:
+
+Node.js (versão recomendada: 18.x ou superior)
+React Native CLI
+Emulador Android/iOS ou dispositivo físico para testes
+Instalação
+Clone este repositório:
+bash
+Copy Code
+git clone https://github.com/seu-usuario/estacionamento-mobile.git
+cd estacionamento-mobile
+Instale as dependências do projeto:
+bash
+Copy Code
+npm install
+Execute o projeto:
+Para Android:
+bash
+Copy Code
+npx react-native run-android
+Para iOS:
+bash
+Copy Code
+npx react-native run-ios
+Como Usar
+Abra o aplicativo no seu dispositivo ou emulador.
+Realize o login com suas credenciais.
+Selecione o estacionamento desejado:
+Aeroporto
+Estacionamento Central
+Shopping
+Visualize as vagas disponíveis e prossiga conforme as opções do app.
+Estrutura do Projeto
+/src
+  /components
+  /screens
+  /navigation
+  /assets
+App.js
+package.json
+README.md
+
+Tecnologias Utilizadas
+React Native
+JavaScript (ES6+)
+Node.js
+[Outras dependências listadas no package.json]
+Contribuição
+Contribuições são bem-vindas! Sinta-se à vontade para abrir issues ou enviar pull requests.
+
+Licença
+Este projeto está sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
+
+Contato
+Dúvidas ou sugestões? Entre em contato pelo e-mail: seuemail@dominio.com

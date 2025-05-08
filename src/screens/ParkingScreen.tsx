@@ -31,7 +31,7 @@ const ParkingScreen = () => {
         const token = await AsyncStorage.getItem('access_token');
         const tokenType = await AsyncStorage.getItem('token_type');
         if (!token) throw new Error("Token de acesso ausente");
-        const response = await fetch(`${API_URL}/parking/parkingsTypes/?skip=0&limit=100`, {
+        const response = await fetch(`${API_URL}/parking/parkingsTypes`, {
           method: "GET",
           headers: {
             "Content-Type": "application/json",
