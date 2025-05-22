@@ -220,7 +220,7 @@ const LoginScreen = () => {
 
             <View style={styles.registerContainer}>
               <Text style={styles.registerText}>Não tem uma conta? </Text>
-              <TouchableOpacity>
+              <TouchableOpacity onPress={() => navigation.navigate('Register')}>
                 <Text style={styles.registerLink}>Cadastre-se</Text>
               </TouchableOpacity>
             </View>

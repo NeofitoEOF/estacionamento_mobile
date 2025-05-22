@@ -8,6 +8,7 @@ import DetalhesReservaScreen from '../screens/DetalhesReservaScreen';
 import BuscarVeiculoScreen from '../screens/BuscarVeiculoScreen';
 import ConfirmarRemocaoScreen from '../screens/ConfirmarRemocaoScreen';
 import LoginScreen from '../screens/LoginScreen';
+import RegisterScreen from '../screens/RegisterScreen';
 
 export type RootStackParamList = {
   Home: undefined;
@@ -18,6 +19,7 @@ export type RootStackParamList = {
   ConfirmarRemocao: { license_plate: string, vehicle_color: string, vehicle_year: string  };
   BuscarVeiculo: undefined;
   Login: undefined;
+  Register: undefined;
 };
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
@@ -27,6 +29,7 @@ const Navigation = () => {
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login">
         <Stack.Screen name="Login" component={LoginScreen} options={{ title: 'Login' }} />
+        <Stack.Screen name="Register" component={RegisterScreen} options={{ title: 'Cadastro' }} />
         <Stack.Screen name="Home" component={HomeScreen} options={{ title: 'Início' }} />
         <Stack.Screen name="Parking" component={ParkingScreen} options={{ title: 'Estacionamentos' }} />
         <Stack.Screen name="Reserva" component={ReservaScreen} options={{ title: 'Reserva' }} />
